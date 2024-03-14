@@ -1,0 +1,85 @@
+# depslib dependency file v1.0
+1710424515 source:c:\testsdl\main.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"motion.h"
+
+1710001470 source:c:\testsdl\stlutils.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	<SDL_mixer.h>
+
+1709963348 c:\testsdl\sdlutils.h
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	<SDL_mixer.h>
+
+1710424339 source:c:\testsdl\surface.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+
+1710418849 c:\testsdl\surface.h
+	<iostream>
+	<SDL.h>
+	<bits/stdc++.h>
+	"sdlutils.h"
+	<SDL_image.h>
+	"surface.h"
+	<SDL_mixer.h>
+
+1710336275 c:\testsdl\main.h
+	<iostream>
+	<SDL.h>
+	<bits/stdc++.h>
+	"sdlutils.h"
+	<SDL_image.h>
+	"surface.h"
+	<SDL_mixer.h>
+
+1710422888 c:\testsdl\motion.h
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+
+1710424967 source:c:\testsdl\motion.cpp
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"motion.h"
+
