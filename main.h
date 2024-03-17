@@ -14,7 +14,7 @@ const int SCREEN_HEIGHT = 450;
 const string WINDOW_TITLE = "me mod game";
 const int WALKING_ANIMATION_FRAMES = 4;
 
-const int LEVEL_WIDTH = 1200;
+const int LEVEL_WIDTH = 3600;
 const int LEVEL_HEIGHT = 0;
 
 

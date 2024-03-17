@@ -37,7 +37,7 @@ SDL_SetRenderDrawColor(renderer,255,255,255,255);
 SDL_Event e;
 Dot dot;
 int saberx,sabery;
-SDL_Texture*a=loadTexture(renderer,"saber2.png");
+SDL_Texture*a=loadTexture(renderer,"saber/saber2.png");
 SDL_QueryTexture(a,NULL,NULL,&saberx,&sabery);
 SDL_DestroyTexture(a);
 a=NULL;
@@ -47,8 +47,8 @@ SDL_Rect camera = {0,0,SCREEN_WIDTH,SCREEN_HEIGHT};
 //gDot[0].loadFromFile("saber/saber1.png");
 gDot[0].loadFromFile("saber/saber2.png");
 gDot[1].loadFromFile("saber/saber3.png");
-gBG.loadFromFile("map1.png");
-
+gBG.loadFromFile("pigmap.png");
+dot.w=saberx/3;dot.h=sabery/3;
 int nhay=0;
 int dem = 0;
 while (true) {
@@ -58,41 +58,30 @@ if(SDL_PollEvent(&e)!=0) {
 if(e.type==SDL_KEYDOWN||e.type==SDL_KEYUP) {
 
 dot.handleEvent(e);
-dot.move();
-
-camera.x = dot.getPosX()+saberx-SCREEN_WIDTH;//cout << dot.getPosY() << endl;
-camera.y = dot.getPosY()+sabery-SCREEN_HEIGHT;
+dot.e = e;
 
 if (camera.x<0) camera.x=0;
 if(camera.x>LEVEL_WIDTH-SCREEN_WIDTH) camera.x=LEVEL_WIDTH-SCREEN_WIDTH;
-if (e.key.keysym.sym==SDLK_RIGHT||e.key.keysym.sym==SDLK_LEFT)
-{khung_hinh++;
-dot.vacham(e,camera,saberx,sabery);}
 }
-if(e.type==SDL_MOUSEBUTTONDOWN) {
+
+if (e.type==SDL_MOUSEBUTTONDOWN) {
     int x,y;
     SDL_GetMouseState(&x,&y);
     cout << x << " " << y << endl;
 }
 }
-
-if (dot.getmVelY()>0&&nhay==0) dem = 80;
-
-if(dem<=80&&dem>=71) nhay+=8;
-if(dem<=70&&dem>=61) nhay+=6;
-if(dem<=60&&dem>=51) nhay+=4;
-if(dem<=50&&dem>=41) nhay+=2;
-if(dem<=40&&dem>=31) nhay-=2;
-if(dem<=30&&dem>=21) nhay-=4;
-if(dem<=20&&dem>=11) nhay-=6;
-if(dem<=10&&dem>=1 ) nhay-=8;
-dem--;if (dem<0)dem=0;
-
-
+dot.camera=camera;
+dot.move();
+SDL_Delay(10);
+camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
+camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
+if (camera.x<0) camera.x=0;
+if(camera.x>LEVEL_WIDTH-SCREEN_WIDTH) camera.x=LEVEL_WIDTH-SCREEN_WIDTH;
 SDL_RenderClear(renderer);
 gBG.render(-camera.x,0);
 gBG.render(SCREEN_WIDTH-camera.x,0);
-if (khung_hinh>7) khung_hinh=0;
+
+SDL_Delay(20);
 dot.renderMove(e,camera.x,nhay,khung_hinh);
 SDL_RenderPresent(renderer);
 

@@ -20,12 +20,19 @@ extern const int SCREEN_HEIGHT;
 class Dot
 {
     public:
+        SDL_Event e;
+        SDL_Rect camera;
+        int w, h;
+        double g = 1;
+        double t = 0;
+        double v = 0;
+        double t1 =0;
 		//The dimensions of the dot
 		static const int DOT_WIDTH = 20;
 		static const int DOT_HEIGHT = 20;
 
 		//Maximum axis velocity of the dot
-		static const int DOT_VEL = 10;
+		static const int DOT_VEL = 7;
 
 		//Initializes the variables
 		Dot();
@@ -35,7 +42,12 @@ class Dot
 
 		//Moves the dot
 		void move();
-            void vacham(SDL_Event e,SDL_Rect camera,int w,int h);
+
+          bool vacham1(int collx,int colly);
+            bool vacham2(int collx,int colly);
+            bool vacham3(int collx,int colly);
+              bool vacham4(int collx,int colly);
+bool vachamsan(int collx,int colly);
 		//Shows the dot on the screen relative to the camera
 		void render(int camX, int camY );
      void renderMove(SDL_Event &e,int camX, int camY ,int k);
@@ -46,7 +58,7 @@ class Dot
     private:
 		//The X and Y offsets of the dot
 		int mPosX, mPosY;
-
+  int collx,colly;
 		//The velocity of the dot
 		int mVelX, mVelY;
 };

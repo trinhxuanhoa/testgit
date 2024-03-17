@@ -163,7 +163,7 @@ void LTexture::setAlpha( Uint8 alpha )
 void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip1 )
 {
 	//Set rendering space and render to screen
-	SDL_Rect renderQuad = { x, y, SCREEN_WIDTH, SCREEN_HEIGHT };
+	SDL_Rect renderQuad = { x, y, 3000, 450 };
 
 	//Set clip rendering dimensions
 	if( clip != NULL )
@@ -175,18 +175,18 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 	//Render to screen
 	SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip1 );
 }
-void LTexture::renderMove( SDL_Event &e,int x, int y,int mPosY, SDL_Rect* clip, double angle, SDL_Point* center)
+void LTexture::renderMove( SDL_Event &e,int &x,int mPosY, SDL_Rect* clip, double angle, SDL_Point* center)
 {
 	//Set rendering space and render to screen
 
-	SDL_Rect renderQuad = { x, mPosY-y, mWidth/2.5, mHeight/2.5 };
+
 //cout << mPosY << endl;
 	//Set clip rendering dimensions
-	if( clip != NULL )
+	/*if( clip != NULL )
 	{
 		renderQuad.w = clip->w;
 		renderQuad.h = clip->h;
-	}
+	}*/
 if (e.type==SDL_KEYDOWN)
 {
     if (e.key.keysym.sym==SDLK_RIGHT)
@@ -196,7 +196,10 @@ if (e.type==SDL_KEYDOWN)
 }
 
 	if(flip==SDL_FLIP_NONE)
-        renderQuad.x=x-50;
+       x=x-40;
+        if(flip==SDL_FLIP_HORIZONTAL)
+        x=x-10;
+        SDL_Rect renderQuad = { x, mPosY, mWidth/3, mHeight/3 };
     SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }
 
