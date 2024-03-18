@@ -47,6 +47,9 @@ SDL_Rect camera = {0,0,SCREEN_WIDTH,SCREEN_HEIGHT};
 //gDot[0].loadFromFile("saber/saber1.png");
 gDot[0].loadFromFile("saber/saber2.png");
 gDot[1].loadFromFile("saber/saber3.png");
+
+
+
 gBG.loadFromFile("pigmap.png");
 dot.w=saberx/3;dot.h=sabery/3;
 int nhay=0;
@@ -60,8 +63,7 @@ if(e.type==SDL_KEYDOWN||e.type==SDL_KEYUP) {
 dot.handleEvent(e);
 dot.e = e;
 
-if (camera.x<0) camera.x=0;
-if(camera.x>LEVEL_WIDTH-SCREEN_WIDTH) camera.x=LEVEL_WIDTH-SCREEN_WIDTH;
+
 }
 
 if (e.type==SDL_MOUSEBUTTONDOWN) {
@@ -79,9 +81,10 @@ if (camera.x<0) camera.x=0;
 if(camera.x>LEVEL_WIDTH-SCREEN_WIDTH) camera.x=LEVEL_WIDTH-SCREEN_WIDTH;
 SDL_RenderClear(renderer);
 gBG.render(-camera.x,0);
-gBG.render(SCREEN_WIDTH-camera.x,0);
+dot.tim();
 
 SDL_Delay(20);
+//cout << dot.getPosX() << endl;
 dot.renderMove(e,camera.x,nhay,khung_hinh);
 SDL_RenderPresent(renderer);
 

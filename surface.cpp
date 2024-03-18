@@ -175,6 +175,7 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 	//Render to screen
 	SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip1 );
 }
+
 void LTexture::renderMove( SDL_Event &e,int &x,int mPosY, SDL_Rect* clip, double angle, SDL_Point* center)
 {
 	//Set rendering space and render to screen

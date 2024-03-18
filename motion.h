@@ -26,7 +26,7 @@ class Dot
         double g = 1;
         double t = 0;
         double v = 0;
-        double t1 =0;
+        int sotim = 0;
 		//The dimensions of the dot
 		static const int DOT_WIDTH = 20;
 		static const int DOT_HEIGHT = 20;
@@ -43,11 +43,18 @@ class Dot
 		//Moves the dot
 		void move();
 
-          bool vacham1(int collx,int colly);
-            bool vacham2(int collx,int colly);
+        bool vacham1(int collx,int colly);
+          bool vacham2(int collx,int colly);
             bool vacham3(int collx,int colly);
               bool vacham4(int collx,int colly);
+               bool vacham5(int collx,int colly);
+                 bool vacham6(int collx,int colly);
+                 bool vacham7(int collx,int colly);
+                 bool vacham8(int collx,int colly);
+                 bool vacham9(int collx,int colly);
+                 bool vacham10(int collx,int colly);
 bool vachamsan(int collx,int colly);
+void tim();
 		//Shows the dot on the screen relative to the camera
 		void render(int camX, int camY );
      void renderMove(SDL_Event &e,int camX, int camY ,int k);
