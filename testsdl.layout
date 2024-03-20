@@ -4,42 +4,66 @@
 	<ActiveTarget name="Release" />
 	<File name="stlutils.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1007" topLine="55" />
+			<Cursor1 position="1007" topLine="226" />
 		</Cursor>
 	</File>
 	<File name="motion.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="496" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1894" topLine="61" />
+			<Cursor1 position="590" topLine="21" />
 		</Cursor>
 	</File>
 	<File name="surface.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1126" topLine="26" />
+			<Cursor1 position="1073" topLine="20" />
 		</Cursor>
 	</File>
-	<File name="surface.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4026" topLine="164" />
+			<Cursor1 position="1401" topLine="34" />
 		</Cursor>
 	</File>
-	<File name="sdlutils.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="surface.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="19" topLine="0" />
+			<Cursor1 position="4715" topLine="31" />
 		</Cursor>
+	</File>
+	<File name="motion.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4554" topLine="136" />
+		</Cursor>
+		<Folding>
+			<Collapse line="114" />
+			<Collapse line="119" />
+			<Collapse line="125" />
+			<Collapse line="131" />
+			<Collapse line="137" />
+			<Collapse line="144" />
+			<Collapse line="150" />
+			<Collapse line="156" />
+			<Collapse line="163" />
+			<Collapse line="169" />
+			<Collapse line="175" />
+			<Collapse line="183" />
+			<Collapse line="194" />
+			<Collapse line="210" />
+			<Collapse line="226" />
+			<Collapse line="243" />
+			<Collapse line="259" />
+			<Collapse line="277" />
+			<Collapse line="294" />
+			<Collapse line="311" />
+			<Collapse line="328" />
+			<Collapse line="346" />
+		</Folding>
 	</File>
 	<File name="main.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="392" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="motion.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="sdlutils.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1399" topLine="45" />
+			<Cursor1 position="19" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

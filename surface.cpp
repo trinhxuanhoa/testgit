@@ -43,9 +43,8 @@ LTexture::LTexture()
 	mTexture = NULL;
 	mWidth = 0;
 	mHeight = 0;
-	SDL_RendererFlip flip = SDL_FLIP_NONE;
-}
 
+}
 LTexture::~LTexture()
 {
 	//Deallocate
@@ -175,19 +174,9 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 	//Render to screen
 	SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip1 );
 }
-
-void LTexture::renderMove( SDL_Event &e,int &x,int mPosY, SDL_Rect* clip, double angle, SDL_Point* center)
+void LTexture::renderMove( SDL_Event &e,int &x,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
 {
-	//Set rendering space and render to screen
 
-
-//cout << mPosY << endl;
-	//Set clip rendering dimensions
-	/*if( clip != NULL )
-	{
-		renderQuad.w = clip->w;
-		renderQuad.h = clip->h;
-	}*/
 if (e.type==SDL_KEYDOWN)
 {
     if (e.key.keysym.sym==SDLK_RIGHT)
@@ -203,6 +192,17 @@ if (e.type==SDL_KEYDOWN)
         SDL_Rect renderQuad = { x, mPosY, mWidth/3, mHeight/3 };
     SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }
+/*void LTexture::renderDanh( SDL_Event &e,int &x,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
+{
+
+
+	if(flip==SDL_FLIP_NONE)
+       x=x+40;
+        if(flip==SDL_FLIP_HORIZONTAL)
+        x=x;
+        SDL_Rect renderQuad = { x, mPosY, mWidth/3, mHeight/3 };
+    SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
+}*/
 
 int LTexture::getWidth()
 {

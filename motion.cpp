@@ -41,7 +41,8 @@ void Dot::handleEvent( SDL_Event& e )
             case SDLK_LEFT: mVelX -= DOT_VEL; break;
             case SDLK_RIGHT: mVelX += DOT_VEL;break;
             case SDLK_UP:  mVelY =DOT_VEL;break;
-            case SDLK_DOWN:  sotim ++;break;
+            case SDLK_DOWN: nhaycao+=1 ;break;
+            case SDLK_a: if(danh==0) {danh = 12;i=0;}break;
         }
     }
     //If a key was released
@@ -53,15 +54,41 @@ void Dot::handleEvent( SDL_Event& e )
             case SDLK_LEFT: mVelX += DOT_VEL;break;
             case SDLK_RIGHT: mVelX -= DOT_VEL; break;
             case SDLK_UP:  mVelY -=DOT_VEL;break;
+             case SDLK_DOWN: nhaycao-=1 ;break;
+             // case SDLK_a: danh -=1;break;
         }
     }
 }
 void Dot::tim() {
-if (sotim>=12) sotim=0;
+if (hesotim/sotim>=12) {hesotim=0; mPosX=0;}
 SDL_Texture*tim=loadTexture(renderer,"tim.png");
-SDL_Rect tim1 = {210*sotim,0,210,35};
+SDL_Rect tim1 = {210*(hesotim/sotim),0,210,35};
 SDL_Rect tim2 = {0,0,210,35};
 SDL_RenderCopy(renderer,tim,&tim1,&tim2);
+SDL_DestroyTexture(tim);
+tim=NULL;
+}
+void Dot::chem() {
+    SDL_Texture *chem[3];
+chem[0]=loadTexture(renderer,"saber/saberchem1.png");
+chem[1]=loadTexture(renderer,"saber/saberchem2.png");
+chem[2]=loadTexture(renderer,"saber/saberchem3.png");
+SDL_Rect a;
+if(flip==SDL_FLIP_NONE)
+ a = {mPosX-camera.x-8,mPosY,w,h};
+if(flip==SDL_FLIP_HORIZONTAL)
+ a = {mPosX-camera.x-40,mPosY,w,h};
+
+SDL_RenderCopyEx(renderer,chem[i/4],NULL,&a,0.0,NULL, flip);
+danh--;
+cout << i << endl;
+i++;
+if(i>=12) i = 0;
+for(int i2 = 0; i2 < 3; i2++)
+{
+    SDL_DestroyTexture(chem[i2]);
+    chem[i2]=NULL;
+}
 }
 void Dot::move()
 {
@@ -78,7 +105,7 @@ void Dot::move()
         collx=mPosX;
     }
 
-    if(mVelY>0&&v==0) {v=24;}
+    if(mVelY>0&&v==0) {v=18;if(nhaycao>0)v=24;}
 
     if(v!=0||t!=0) {
 double s=0.5*g*t*t-v*t;
@@ -145,7 +172,6 @@ if( vacham8(collx,colly))
        colly=mPosY;
        v=0;t=0;
     }
-//cout << mPosX << endl;
 if( vacham9(collx,colly))
     {
        mPosY=212-90;
@@ -158,6 +184,8 @@ if( vacham10(collx,colly))
        colly=mPosY;
        v=0;t=0;
     }
+    if (mPosX>1260&&mPosX<1575&&mPosY+90>300)
+        hesotim++;
 }
 bool Dot::vachamsan(int collx,int colly) {
  bool k = true;
@@ -341,7 +369,15 @@ return k;
 void Dot::renderMove(SDL_Event &e,int camX, int nhay,int k )
 {
     int a = mPosX-camX;
-	gDot[0/4].renderMove(e,a,mPosY);
+if (k1>12) k1 = 4;
+
+    if (nhaycao>0) {
+	gDot[k1/4].renderMove(e,a,mPosY,flip);
+	k1++;
+    }
+	else
+     gDot[0].renderMove(e,a,mPosY,flip);
+
 }
 
 int Dot::getPosX()

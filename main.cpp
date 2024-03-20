@@ -27,7 +27,7 @@ const int SCREEN_TICKS_PER_FRAME = 1000/SCREEN_FPS;
 
 LTexture gDot[10];
 LTexture gBG;
-
+//LTexture chem[10];
 
 
 int main (int argc, char* argv[]) {
@@ -37,7 +37,7 @@ SDL_SetRenderDrawColor(renderer,255,255,255,255);
 SDL_Event e;
 Dot dot;
 int saberx,sabery;
-SDL_Texture*a=loadTexture(renderer,"saber/saber2.png");
+SDL_Texture*a=loadTexture(renderer,"saber/saber2.3.png");
 SDL_QueryTexture(a,NULL,NULL,&saberx,&sabery);
 SDL_DestroyTexture(a);
 a=NULL;
@@ -45,9 +45,10 @@ int khung_hinh = 0;
 SDL_Rect camera = {0,0,SCREEN_WIDTH,SCREEN_HEIGHT};
 
 //gDot[0].loadFromFile("saber/saber1.png");
-gDot[0].loadFromFile("saber/saber2.png");
-gDot[1].loadFromFile("saber/saber3.png");
-
+gDot[0].loadFromFile("saber/newsaber.png");
+gDot[1].loadFromFile("saber/sabere1.png");
+gDot[2].loadFromFile("saber/sabere2.png");
+gDot[3].loadFromFile("saber/sabere3.png");
 
 
 gBG.loadFromFile("pigmap.png");
@@ -72,20 +73,25 @@ if (e.type==SDL_MOUSEBUTTONDOWN) {
     cout << x << " " << y << endl;
 }
 }
-dot.camera=camera;
+
 dot.move();
 SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 if (camera.x<0) camera.x=0;
 if(camera.x>LEVEL_WIDTH-SCREEN_WIDTH) camera.x=LEVEL_WIDTH-SCREEN_WIDTH;
+dot.camera=camera;
 SDL_RenderClear(renderer);
 gBG.render(-camera.x,0);
 dot.tim();
 
-SDL_Delay(20);
+
 //cout << dot.getPosX() << endl;
+if(dot.danh==0)
 dot.renderMove(e,camera.x,nhay,khung_hinh);
+else
+dot.chem();
+SDL_Delay(20);
 SDL_RenderPresent(renderer);
 
 

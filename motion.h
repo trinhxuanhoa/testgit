@@ -26,8 +26,13 @@ class Dot
         double g = 1;
         double t = 0;
         double v = 0;
-        int sotim = 0;
-		//The dimensions of the dot
+        int sotim = 10;
+        int hesotim=0;
+        int nhaycao=0;
+        int danh=0;
+        int i = 0;
+int k1 = 4;
+SDL_RendererFlip flip=SDL_FLIP_NONE;	//The dimensions of the dot
 		static const int DOT_WIDTH = 20;
 		static const int DOT_HEIGHT = 20;
 
@@ -55,6 +60,7 @@ class Dot
                  bool vacham10(int collx,int colly);
 bool vachamsan(int collx,int colly);
 void tim();
+void chem();
 		//Shows the dot on the screen relative to the camera
 		void render(int camX, int camY );
      void renderMove(SDL_Event &e,int camX, int camY ,int k);

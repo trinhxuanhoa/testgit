@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1710776644 source:c:\testsdl\main.cpp
+1710904714 source:c:\testsdl\main.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -32,7 +32,7 @@
 	<bits/stdc++.h>
 	<SDL_mixer.h>
 
-1710776080 source:c:\testsdl\surface.cpp
+1710902802 source:c:\testsdl\surface.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -43,7 +43,7 @@
 	"main.h"
 	<SDL_mixer.h>
 
-1710776080 c:\testsdl\surface.h
+1710902802 c:\testsdl\surface.h
 	<iostream>
 	<SDL.h>
 	<bits/stdc++.h>
@@ -61,7 +61,7 @@
 	"surface.h"
 	<SDL_mixer.h>
 
-1710776918 c:\testsdl\motion.h
+1710902802 c:\testsdl\motion.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -72,7 +72,7 @@
 	"main.h"
 	<SDL_mixer.h>
 
-1710777002 source:c:\testsdl\motion.cpp
+1710903457 source:c:\testsdl\motion.cpp
 	<SDL_image.h>
 	<stdio.h>
 	<string>
