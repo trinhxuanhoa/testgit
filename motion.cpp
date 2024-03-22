@@ -8,6 +8,7 @@
 #include "main.h"
 #include <SDL_mixer.h>
 #include "motion.h"
+
 using namespace std;
 extern LTexture gDot[10];
 extern LTexture gBG;
@@ -38,11 +39,11 @@ void Dot::handleEvent( SDL_Event& e )
         switch( e.key.keysym.sym )
         {
 
-            case SDLK_LEFT: mVelX -= DOT_VEL; break;
-            case SDLK_RIGHT: mVelX += DOT_VEL;break;
+            case SDLK_LEFT: mVelX -= DOT_VEL;   flip=SDL_FLIP_HORIZONTAL; break;
+            case SDLK_RIGHT: mVelX += DOT_VEL;   flip=SDL_FLIP_NONE;break;
             case SDLK_UP:  mVelY =DOT_VEL;break;
             case SDLK_DOWN: nhaycao+=1 ;break;
-            case SDLK_a: if(danh==0) {danh = 12;i=0;}break;
+            case SDLK_w: if(danh==0) {danh = 9;i=0;}break;
         }
     }
     //If a key was released
@@ -60,7 +61,7 @@ void Dot::handleEvent( SDL_Event& e )
     }
 }
 void Dot::tim() {
-if (hesotim/sotim>=12) {hesotim=0; mPosX=0;}
+
 SDL_Texture*tim=loadTexture(renderer,"tim.png");
 SDL_Rect tim1 = {210*(hesotim/sotim),0,210,35};
 SDL_Rect tim2 = {0,0,210,35};
@@ -73,17 +74,18 @@ void Dot::chem() {
 chem[0]=loadTexture(renderer,"saber/saberchem1.png");
 chem[1]=loadTexture(renderer,"saber/saberchem2.png");
 chem[2]=loadTexture(renderer,"saber/saberchem3.png");
-SDL_Rect a;
-if(flip==SDL_FLIP_NONE)
- a = {mPosX-camera.x-8,mPosY,w,h};
-if(flip==SDL_FLIP_HORIZONTAL)
- a = {mPosX-camera.x-40,mPosY,w,h};
 
-SDL_RenderCopyEx(renderer,chem[i/4],NULL,&a,0.0,NULL, flip);
+
+if(flip==SDL_FLIP_NONE)
+ MPOSX=mPosX-camera.x-8;
+if(flip==SDL_FLIP_HORIZONTAL)
+MPOSX=mPosX-camera.x-40;
+SDL_Rect a = {MPOSX,mPosY,w,h};
+SDL_RenderCopyEx(renderer,chem[i/3],NULL,&a,0.0,NULL, flip);
 danh--;
-cout << i << endl;
+
 i++;
-if(i>=12) i = 0;
+if(i>=9) i = 0;
 for(int i2 = 0; i2 < 3; i2++)
 {
     SDL_DestroyTexture(chem[i2]);
@@ -103,6 +105,7 @@ void Dot::move()
     {
         mPosX -= mVelX;
         collx=mPosX;
+
     }
 
     if(mVelY>0&&v==0) {v=18;if(nhaycao>0)v=24;}
@@ -117,8 +120,8 @@ colly=mPosY;
 }
 
 //cout << g << " " << v << endl;
-if(vachamsan(collx,colly))
-    {v=0;t=0;
+if(vachamsan(collx,colly)){
+        v=0;t=0;
     mPosY=330;
     colly=mPosY;}
 
@@ -184,8 +187,12 @@ if( vacham10(collx,colly))
        colly=mPosY;
        v=0;t=0;
     }
-    if (mPosX>1260&&mPosX<1575&&mPosY+90>300)
-        hesotim++;
+
+       /* if(flip==SDL_FLIP_NONE&&xs-22<mPosX&&xs+40>mPosX)
+            hesotim++;
+            if(flip==SDL_FLIP_HORIZONTAL&&xs+33<mPosX&&xs+103>mPosX)
+           hesotim++;*/
+           // cout << mPosX << endl;
 }
 bool Dot::vachamsan(int collx,int colly) {
  bool k = true;
@@ -366,18 +373,18 @@ k= false;
 //cout << mPosX << " " << camera.x << endl;
 return k;
 }
-void Dot::renderMove(SDL_Event &e,int camX, int nhay,int k )
+void Dot::renderMove(SDL_Event &e,int camX,int nhay,int k )
 {
-    int a = mPosX-camX;
+
 if (k1>12) k1 = 4;
 
     if (nhaycao>0) {
-	gDot[k1/4].renderMove(e,a,mPosY,flip);
+	gDot[k1/4].renderMove(e,camera.x,mPosX,mPosY,flip);
 	k1++;
     }
 	else
-     gDot[0].renderMove(e,a,mPosY,flip);
-
+     gDot[0].renderMove(e,camera.x,mPosX,mPosY,flip);
+//cout << MPOSX << endl;
 }
 
 int Dot::getPosX()

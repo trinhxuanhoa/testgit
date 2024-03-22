@@ -9,7 +9,9 @@
 #include "main.h"
 #include <SDL_mixer.h>
 #include "motion.h"
+#include "Ai.h"
 using namespace std;
+
 
 
 TTF_Font* gFont = NULL;
@@ -27,7 +29,7 @@ const int SCREEN_TICKS_PER_FRAME = 1000/SCREEN_FPS;
 
 LTexture gDot[10];
 LTexture gBG;
-//LTexture chem[10];
+
 
 
 int main (int argc, char* argv[]) {
@@ -36,6 +38,7 @@ SDL_SetRenderDrawColor(renderer,255,255,255,255);
 
 SDL_Event e;
 Dot dot;
+Ai ai;
 int saberx,sabery;
 SDL_Texture*a=loadTexture(renderer,"saber/saber2.3.png");
 SDL_QueryTexture(a,NULL,NULL,&saberx,&sabery);
@@ -63,7 +66,7 @@ if(e.type==SDL_KEYDOWN||e.type==SDL_KEYUP) {
 
 dot.handleEvent(e);
 dot.e = e;
-
+//ai.handleEvent(e);
 
 }
 
@@ -75,14 +78,24 @@ if (e.type==SDL_MOUSEBUTTONDOWN) {
 }
 
 dot.move();
+//xuong.mPosX=dot.mPosX;
+//xuong.mPosY=dot.mPosY;
 SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
+ai.sPosX=dot.mPosX;
+ai.sPosY=dot.mPosY;
 if (camera.x<0) camera.x=0;
 if(camera.x>LEVEL_WIDTH-SCREEN_WIDTH) camera.x=LEVEL_WIDTH-SCREEN_WIDTH;
 dot.camera=camera;
+ai.camera=camera;
 SDL_RenderClear(renderer);
 gBG.render(-camera.x,0);
+
+if(ai.hesotim>=120){ai.hesotim=0;dot.mPosX=0;}
+
+dot.hesotim=ai.hesotim;
+
 dot.tim();
 
 
@@ -91,6 +104,9 @@ if(dot.danh==0)
 dot.renderMove(e,camera.x,nhay,khung_hinh);
 else
 dot.chem();
+ai.move();
+cout << dot.mPosX << " " << ai.mPosX << endl;
+ai.rendermonster();
 SDL_Delay(20);
 SDL_RenderPresent(renderer);
 

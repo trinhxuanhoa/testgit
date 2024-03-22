@@ -12,6 +12,7 @@ and may not be redistributed without written permission.*/
 #include "surface.h"
 #include "main.h"
 #include <SDL_mixer.h>
+#include "Ai.h"
 //Screen dimension constants
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
@@ -174,22 +175,15 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 	//Render to screen
 	SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip1 );
 }
-void LTexture::renderMove( SDL_Event &e,int &x,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
+void LTexture::renderMove( SDL_Event &e,int camx,int mPosX,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
 {
 
-if (e.type==SDL_KEYDOWN)
-{
-    if (e.key.keysym.sym==SDLK_RIGHT)
-        flip=SDL_FLIP_NONE;
-    else if (e.key.keysym.sym==SDLK_LEFT)
-        flip=SDL_FLIP_HORIZONTAL;
-}
 
 	if(flip==SDL_FLIP_NONE)
-       x=x-40;
+       mPosX-=40;
         if(flip==SDL_FLIP_HORIZONTAL)
-        x=x-10;
-        SDL_Rect renderQuad = { x, mPosY, mWidth/3, mHeight/3 };
+         mPosX-=10;
+        SDL_Rect renderQuad = { mPosX-camx, mPosY, mWidth/3, mHeight/3 };
     SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }
 /*void LTexture::renderDanh( SDL_Event &e,int &x,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)

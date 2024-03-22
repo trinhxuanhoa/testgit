@@ -8,10 +8,11 @@
 #include <SDL_image.h>
 #include "surface.h"
 #include <SDL_mixer.h>
+#include "Ai.h"
 using namespace std;
 const int SCREEN_WIDTH = 600;
 const int SCREEN_HEIGHT = 450;
-const string WINDOW_TITLE = "me mod game";
+const string WINDOW_TITLE = "dungeon 2d";
 const int WALKING_ANIMATION_FRAMES = 4;
 
 const int LEVEL_WIDTH = 3000;

@@ -12,6 +12,7 @@
 #include "surface.h"
 #include "main.h"
 #include <SDL_mixer.h>
+#include "Ai.h"
 //Screen dimension constants
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
@@ -31,10 +32,9 @@ class Dot
         int nhaycao=0;
         int danh=0;
         int i = 0;
+        int MPOSX=0;
 int k1 = 4;
 SDL_RendererFlip flip=SDL_FLIP_NONE;	//The dimensions of the dot
-		static const int DOT_WIDTH = 20;
-		static const int DOT_HEIGHT = 20;
 
 		//Maximum axis velocity of the dot
 		static const int DOT_VEL = 7;
@@ -62,22 +62,21 @@ bool vachamsan(int collx,int colly);
 void tim();
 void chem();
 		//Shows the dot on the screen relative to the camera
+		void rendermonster();
 		void render(int camX, int camY );
      void renderMove(SDL_Event &e,int camX, int camY ,int k);
 		//Position accessors
 		int getPosX();
 		int getPosY();
         int  getmVelY();
-    private:
+
 		//The X and Y offsets of the dot
 		int mPosX, mPosY;
   int collx,colly;
+  int xs=0;
 		//The velocity of the dot
 		int mVelX, mVelY;
 };
-
-
-
 
 
 
