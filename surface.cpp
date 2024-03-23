@@ -98,8 +98,9 @@ bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColo
 {
 	//Get rid of preexisting texture
 	free();
-//gFont=TTF_OpenFont( "22_timing/lazy.ttf", 28 );
+gFont=TTF_OpenFont( "lazy.ttf", 28 );
 	//Render text surface
+
 	SDL_Surface* textSurface = TTF_RenderText_Solid( gFont, textureText.c_str(), textColor );
 	if( textSurface != NULL )
 	{
@@ -186,18 +187,13 @@ void LTexture::renderMove( SDL_Event &e,int camx,int mPosX,int mPosY,SDL_Rendere
         SDL_Rect renderQuad = { mPosX-camx, mPosY, mWidth/3, mHeight/3 };
     SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }
-/*void LTexture::renderDanh( SDL_Event &e,int &x,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
-{
 
-
-	if(flip==SDL_FLIP_NONE)
-       x=x+40;
-        if(flip==SDL_FLIP_HORIZONTAL)
-        x=x;
-        SDL_Rect renderQuad = { x, mPosY, mWidth/3, mHeight/3 };
-    SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
-}*/
-
+void LTexture::rendertext (int x,int y,int live) {
+SDL_Color color = {255,255,255,255};
+SDL_Rect a = {x,y,mWidth,mHeight};
+if(loadFromRenderedText(to_string(live),color))
+    SDL_RenderCopy(renderer,mTexture,NULL,&a);
+}
 int LTexture::getWidth()
 {
 	return mWidth;

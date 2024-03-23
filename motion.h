@@ -33,6 +33,8 @@ class Dot
         int danh=0;
         int i = 0;
         int MPOSX=0;
+        int skill=0;
+        int mskill=0;
 int k1 = 4;
 SDL_RendererFlip flip=SDL_FLIP_NONE;	//The dimensions of the dot
 
@@ -58,6 +60,7 @@ SDL_RendererFlip flip=SDL_FLIP_NONE;	//The dimensions of the dot
                  bool vacham8(int collx,int colly);
                  bool vacham9(int collx,int colly);
                  bool vacham10(int collx,int colly);
+
 bool vachamsan(int collx,int colly);
 void tim();
 void chem();

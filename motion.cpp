@@ -75,23 +75,32 @@ chem[0]=loadTexture(renderer,"saber/saberchem1.png");
 chem[1]=loadTexture(renderer,"saber/saberchem2.png");
 chem[2]=loadTexture(renderer,"saber/saberchem3.png");
 
+SDL_Texture *ki = loadTexture(renderer,"saber/ki1.png");
 
 if(flip==SDL_FLIP_NONE)
- MPOSX=mPosX-camera.x-8;
+ {MPOSX=mPosX-camera.x-8;
+ skill=mPosX+50+mskill;
+ mskill+=15;}
 if(flip==SDL_FLIP_HORIZONTAL)
-MPOSX=mPosX-camera.x-40;
+{MPOSX=mPosX-camera.x-40;
+skill=mPosX-50-mskill;
+mskill+=15;}
+
 SDL_Rect a = {MPOSX,mPosY,w,h};
-SDL_RenderCopyEx(renderer,chem[i/3],NULL,&a,0.0,NULL, flip);
+SDL_Rect b = {skill-camera.x,mPosY,w,h};
+SDL_RenderCopyEx(renderer,chem[i/2],NULL,&a,0.0,NULL, flip);
+SDL_RenderCopyEx(renderer,ki,NULL,&b,0.0,NULL, flip);
 danh--;
 
 i++;
-if(i>=9) i = 0;
+if(i>=6) i = 0;
 for(int i2 = 0; i2 < 3; i2++)
 {
     SDL_DestroyTexture(chem[i2]);
     chem[i2]=NULL;
 }
 }
+
 void Dot::move()
 {
     //Move the dot left or right

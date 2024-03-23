@@ -47,6 +47,7 @@ class LTexture
 void renderMove( SDL_Event &e,int camx,int mPosX,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip=NULL, double angle=0.0, SDL_Point* center=NULL);
 //void renderDanh( SDL_Event &e,int &x,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip=NULL, double angle=0.0, SDL_Point* center=NULL);
 		//Gets image dimensions
+		void rendertext (int x,int y,int live);
 		int getWidth();
 		int getHeight();
 

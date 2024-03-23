@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1711109234 source:c:\testsdl\main.cpp
+1711211286 source:c:\testsdl\main.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -12,6 +12,7 @@
 	<SDL_mixer.h>
 	"motion.h"
 	"Ai.h"
+	"music.h"
 
 1710001470 source:c:\testsdl\stlutils.cpp
 	<SDL.h>
@@ -33,7 +34,7 @@
 	<bits/stdc++.h>
 	<SDL_mixer.h>
 
-1711099182 source:c:\testsdl\surface.cpp
+1711183750 source:c:\testsdl\surface.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -45,7 +46,7 @@
 	<SDL_mixer.h>
 	"Ai.h"
 
-1711016635 c:\testsdl\surface.h
+1711182928 c:\testsdl\surface.h
 	<iostream>
 	<SDL.h>
 	<bits/stdc++.h>
@@ -65,7 +66,7 @@
 	<SDL_mixer.h>
 	"Ai.h"
 
-1711087924 c:\testsdl\motion.h
+1711178542 c:\testsdl\motion.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -77,7 +78,7 @@
 	<SDL_mixer.h>
 	"Ai.h"
 
-1711104276 source:c:\testsdl\motion.cpp
+1711191028 source:c:\testsdl\motion.cpp
 	<SDL_image.h>
 	<stdio.h>
 	<string>
@@ -88,7 +89,7 @@
 	<SDL_mixer.h>
 	"motion.h"
 
-1711091047 c:\testsdl\ai.h
+1711187445 c:\testsdl\ai.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -100,7 +101,7 @@
 	<SDL_mixer.h>
 	"motion.h"
 
-1711105626 source:c:\testsdl\ai.cpp
+1711189939 source:c:\testsdl\ai.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -113,4 +114,29 @@
 	<SDL_mixer.h>
 	"motion.h"
 	"Ai.h"
+
+1711205121 source:c:\testsdl\music.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"music.h"
+
+1711205092 c:\testsdl\music.h
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"music.h"
 

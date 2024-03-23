@@ -16,25 +16,32 @@ extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;
-
+LTexture re;
 void Ai::move()
-{if (abs(sPosX-mPosX)<=400) {
-  if(sPosX+20<mPosX) {
+{
+  if(sPosX-38<=mPosX) {
     flip=SDL_FLIP_NONE;
-    mVelX=-3;
-
+     if(mVelY==0) mVelX=-3;
+if(sPosX+28>=mPosX&&sPosX-38<=mPosX&&sPosY+50>=mPosY&&sPosY-30<=mPosY)
+   {hesotim++;mVelX=0;mVelY=0;}
+   if(sPosY+90>=mPosY&&sPosY-70<=mPosY&&mPosX>skill-84&&mPosX<skill+38&&danh>0)
+    live--;
   }
- if(sPosX-150>mPosX) {
+ else if(sPosX-94>=mPosX) {
     flip=SDL_FLIP_HORIZONTAL;
-    mVelX=3;
+   if(mVelY==0) mVelX=3;
+if(sPosX-94>=mPosX&&sPosX-136<=mPosX&&sPosY+50>=mPosY&&sPosY-30<=mPosY)
+    {hesotim++;mVelX=0;mVelY=0;}
+    if(sPosY+90>=mPosY&&sPosY-70<=mPosY&&mPosX>=skill-143&&mPosX<skill-23&&danh>0)
+    live--;
   }
+else {
+    if( flip==SDL_FLIP_HORIZONTAL&&mVelY==0) mVelX=3;
+    if( flip==SDL_FLIP_NONE&&mVelY==0) mVelX=-3;
 }
-else mVelX=0;
 
-  if(sPosY==mPosY) {
-  if(sPosX-28<=mPosX&&sPosX+38>=mPosX&&flip==SDL_FLIP_NONE) {hesotim++;mVelX=0;}
-  if(sPosX-87>=mPosX&&sPosX-136<=mPosX&&flip==SDL_FLIP_HORIZONTAL) {hesotim++;mVelX=0;}
-  }
+if(abs(sPosX-mPosX)<=100&&sPosY<mPosY) mVelY=1;
+
    if (sPosX>=1267&&sPosX<=1575&&sPosY+90>300)
         hesotim++;
     mPosX += mVelX;
@@ -47,12 +54,17 @@ else mVelX=0;
     {
         mPosX -= mVelX;
         collx=mPosX;
-
-
+        mVelY=1;
     }
 
+
 if(mPosX<68&&flip==SDL_FLIP_NONE) mVelY=0;
-    if(mVelY>0&&v==0) {v=18;}
+    if(mVelY>0&&v==0) {
+          if(sv==0) v=18;
+else v=sv;
+
+    if(mPosX==1104||mPosX==1200||mPosX==264||mPosX==1998||mPosX==2067||mPosX==2214||mPosX==2280||mPosX==1737||mPosX==2310) v = 24;
+    }
 
     if(v!=0||t!=0) {
 double s=0.5*g*t*t-v*t;
@@ -320,7 +332,6 @@ skeleton[0]=loadTexture(renderer,"monster/skeleton1.1.png");
 skeleton[1]=loadTexture(renderer,"monster/skeleton1.2.png");
 //cout << mPosX << endl;
 
-
  int x =0;
 static int ske = 0;
 ske++;
@@ -331,8 +342,17 @@ if(flip==SDL_FLIP_NONE)
 if(flip==SDL_FLIP_HORIZONTAL)
 x = mPosX+50;
  SDL_Rect skeleton1 = {x-camera.x,mPosY,100,90};
-SDL_RenderCopyEx(renderer,skeleton[ske/6],NULL,&skeleton1,0.0,NULL,flip);
+ //cout << live << endl;
+ if(live>0){
+    SDL_RenderCopyEx(renderer,skeleton[ske/6],NULL,&skeleton1,0.0,NULL,flip);
+   re.rendertext(mPosX +45-camera.x,mPosY-10,live);
 }
+else
+{mPosX=900;live=100;}
+}
+
+
+
 void Ai::handleEvent( SDL_Event& e )
 {
     //If a key was pressed

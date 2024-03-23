@@ -31,11 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Ai.cpp" />
 		<Unit filename="Ai.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
 		<Unit filename="motion.cpp" />
 		<Unit filename="motion.h" />
+		<Unit filename="music.cpp" />
+		<Unit filename="music.h" />
 		<Unit filename="sdlutils.h" />
 		<Unit filename="stlutils.cpp" />
 		<Unit filename="surface.cpp" />
