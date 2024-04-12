@@ -10,7 +10,8 @@
 #include "motion.h"
 
 using namespace std;
-extern LTexture gDot[10];
+extern LTexture gDot[2];
+LTexture demq;
 extern LTexture gBG;
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
@@ -21,7 +22,7 @@ Dot::Dot()
 {
     //Initialize the offsets
     mPosX = 0;
-    mPosY = 420-90;
+    mPosY = 330;
 
     //Initialize the velocity
     mVelX = 0;
@@ -32,24 +33,24 @@ Dot::Dot()
 
 void Dot::handleEvent( SDL_Event& e )
 {
-    //If a key was pressed
+
 	if( e.type == SDL_KEYDOWN && e.key.repeat == 0 )
     {
-        //Adjust the velocity
+
         switch( e.key.keysym.sym )
         {
 
             case SDLK_LEFT: mVelX -= DOT_VEL;   flip=SDL_FLIP_HORIZONTAL; break;
-            case SDLK_RIGHT: mVelX += DOT_VEL;   flip=SDL_FLIP_NONE;break;
+            case SDLK_RIGHT: mVelX += DOT_VEL;  flip=SDL_FLIP_NONE;break;
             case SDLK_UP:  mVelY =DOT_VEL;break;
             case SDLK_DOWN: nhaycao+=1 ;break;
-            case SDLK_w: if(danh==0) {danh = 9;i=0;}break;
+            case SDLK_SPACE: if(danh==0) {danh = 7;i=0;}break;
         }
     }
-    //If a key was released
+
     else if( e.type == SDL_KEYUP && e.key.repeat == 0 )
     {
-        //Adjust the velocity
+
         switch( e.key.keysym.sym )
         {
             case SDLK_LEFT: mVelX += DOT_VEL;break;
@@ -70,26 +71,61 @@ SDL_DestroyTexture(tim);
 tim=NULL;
 }
 void Dot::chem() {
-    SDL_Texture *chem[3];
+
+    if(mskill==0)
+        {vachamskill=false;
+        }
+
+    SDL_Texture*chem[3];
 chem[0]=loadTexture(renderer,"saber/saberchem1.png");
 chem[1]=loadTexture(renderer,"saber/saberchem2.png");
 chem[2]=loadTexture(renderer,"saber/saberchem3.png");
 
 SDL_Texture *ki = loadTexture(renderer,"saber/ki1.png");
+if(mskill==0)
+    skilly=mPosY;
+
+if(danh==7)
+flipskill=flip;
 
 if(flip==SDL_FLIP_NONE)
  {MPOSX=mPosX-camera.x-8;
- skill=mPosX+50+mskill;
- mskill+=15;}
+ //skill=mPosX+50+mskill;
+
+}
 if(flip==SDL_FLIP_HORIZONTAL)
 {MPOSX=mPosX-camera.x-40;
-skill=mPosX-50-mskill;
-mskill+=15;}
 
-SDL_Rect a = {MPOSX,mPosY,w,h};
-SDL_Rect b = {skill-camera.x,mPosY,w,h};
+}
+
+if(flipskill==SDL_FLIP_NONE)
+ skill=mPosX+50+mskill;
+ if(flipskill==SDL_FLIP_HORIZONTAL) {
+skill=mPosX-80-mskill;
+
+ }
+ //cout << mskill << endl;
+mskill+=15;
+//cout << demskill << endl;
+if(mskill==90) demskill++;
+if(demskill==10) {danh==9;skilldai=true;}
+if(mskill>90&&demskill!=10&&!skilldai) mskill=0;
+if(mskill>=120) skilldai=false;
+if(demskill==10) demskill=0;
+SDL_Rect a = {MPOSX,mPosY-camera.y,w,h};
+
+SDL_Rect b = {skill-camera.x,skilly-camera.y,w,h};
 SDL_RenderCopyEx(renderer,chem[i/2],NULL,&a,0.0,NULL, flip);
-SDL_RenderCopyEx(renderer,ki,NULL,&b,0.0,NULL, flip);
+//if(!vachamdan(skill,skilly+45,0,0))///////////////////////////////////////////////////////////////////
+   //{vachamskill=true;
+
+   // mskill=0;
+ //}
+
+
+SDL_RenderCopyEx(renderer,ki,NULL,&b,0.0,NULL,flipskill);
+
+
 danh--;
 
 i++;
@@ -99,6 +135,8 @@ for(int i2 = 0; i2 < 3; i2++)
     SDL_DestroyTexture(chem[i2]);
     chem[i2]=NULL;
 }
+SDL_DestroyTexture(ki);
+ki=NULL;
 }
 
 void Dot::move()
@@ -122,13 +160,14 @@ void Dot::move()
     if(v!=0||t!=0) {
 double s=0.5*g*t*t-v*t;
 t+=1;
+
 mPosY+=-s+0.5*g*t*t-v*t;
 
 colly=mPosY;
 
 }
 
-//cout << g << " " << v << endl;
+
 if(vachamsan(collx,colly)){
         v=0;t=0;
     mPosY=330;
@@ -382,20 +421,120 @@ k= false;
 //cout << mPosX << " " << camera.x << endl;
 return k;
 }
-void Dot::renderMove(SDL_Event &e,int camX,int nhay,int k )
+void Dot::renderMove(SDL_Event &e,int camX,int camY,int nhay )
 {
 
-if (k1>12) k1 = 4;
-
+if (k1>=20) k1 = 8;
     if (nhaycao>0) {
-	gDot[k1/4].renderMove(e,camera.x,mPosX,mPosY,flip);
+	gDot[k1/4].renderMove(e,camera.x,camera.y,mPosX,mPosY,flip);
 	k1++;
     }
 	else
-     gDot[0].renderMove(e,camera.x,mPosX,mPosY,flip);
-//cout << MPOSX << endl;
+    {
+        if(mVelX!=0)
+        k++;
+        else
+        k=0;
+       if(k>7) k=0;
+        gDot[k/4].renderMove(e,camera.x,camera.y,mPosX,mPosY,flip);
+    }
 }
+void Dot::demsoluong(int live1,int live2) {
 
+
+SDL_Texture*dem=loadTexture(renderer,"monster/dem.png");
+SDL_RenderCopy(renderer,dem,NULL,NULL);
+if(!resetdemlive)
+{
+    demlive1=0;
+    demlive2=0;
+}
+if(live1<=0) demlive1++;
+if(live2<=0) demlive2++;
+demq.rendertext(50,50,demlive1);
+demq.rendertext(51,50,demlive1);
+demq.rendertext(52,50,demlive1);
+demq.rendertext(50,100,demlive2);
+demq.rendertext(51,100,demlive2);
+demq.rendertext(52,100,demlive2);
+SDL_DestroyTexture(dem);
+dem=NULL;
+}
+bool Dot::vachamdan(int &danx,int dany,int hd,int wd)  {
+
+int k = true;
+if(dany+hd>97*3) {
+if(danx+wd>52*3&&danx<84*3) {k=false;
+if(flipskill==SDL_FLIP_NONE) danx=52*3;
+else danx=84*3;
+cout << "1" << endl;
+}
+}
+if(dany+hd>74*3) {
+if(danx+wd>118*3&&danx<233*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=118*3;
+else danx=233*3;
+cout << "2" << endl;
+}
+}
+if(dany+hd>108*3) {
+if(danx+wd>233*3&&danx<277*3)  {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=233*3;
+else danx=277*3;
+cout << "3" << endl;
+}
+}
+if(dany+hd>49*3) {
+if(danx+wd>400*3&&danx<422*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=400*3;
+else danx=422*3;
+cout << "4" << endl;
+}
+}
+if(dany+hd>84*3) {
+if(danx+wd>535*3&&danx<574*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=535*3;
+else danx=574*3;
+cout << "5" << endl;
+}
+}
+if(dany+hd>49*3) {
+if(danx+wd>574*3&&danx<601*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=574*3;
+else danx=601*3;
+cout << "6" << endl;
+}
+}
+if(dany+hd>96*3) {
+if(danx+wd>639*3&&danx<653*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=639*3;
+else danx=653*3;
+cout << "7" << endl;
+}
+}
+if(dany+hd>70*3) {
+if(danx+wd>695*3&&danx<710*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=695*3;
+else danx=710*3;
+cout << "8" << endl;
+}
+}
+if(dany+hd>70*3) {
+if(danx+wd>766*3&&danx<782*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=766*3;
+else danx=782*3;
+cout << "9" << endl;
+}
+}
+if(dany+hd>74*3) {
+if((danx+wd>799*3||danx+30>987*3)&&danx<815*3) {k= false;
+if(flipskill==SDL_FLIP_NONE) danx=799*3;
+else danx=987*3;
+cout << "10" << endl;
+}
+}
+return k;
+}
 int Dot::getPosX()
 {
 	return mPosX;
@@ -409,5 +548,4 @@ int Dot::getmVelY()
 {
     return mVelY;
 }
-
 

@@ -40,7 +40,7 @@ bool music::loadMusic()
 }
 
 void music::handleMusic () {
-Mix_Volume(-1, MIX_MAX_VOLUME / 10);
+Mix_Volume(-1, MIX_MAX_VOLUME / 5);
 
 
 
@@ -72,7 +72,8 @@ Mix_VolumeMusic(MIX_MAX_VOLUME / 5);
     Mix_PlayMusic( amthanhnen, -1 );
 }
 void music::closeMusic() {
-
+Mix_FreeChunk(danh);
+danh=NULL;
 Mix_FreeMusic(amthanhnen);
 amthanhnen=NULL;
 Mix_Quit();

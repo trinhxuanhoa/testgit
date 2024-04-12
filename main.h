@@ -16,7 +16,7 @@ const string WINDOW_TITLE = "dungeon 2d";
 const int WALKING_ANIMATION_FRAMES = 4;
 
 const int LEVEL_WIDTH = 3000;
-const int LEVEL_HEIGHT = 0;
+const int LEVEL_HEIGHT = 900;
 
 
 const int BUTTON_WIDTH = 300;

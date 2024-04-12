@@ -40,6 +40,8 @@
 		<Unit filename="music.cpp" />
 		<Unit filename="music.h" />
 		<Unit filename="sdlutils.h" />
+		<Unit filename="start.cpp" />
+		<Unit filename="start.h" />
 		<Unit filename="stlutils.cpp" />
 		<Unit filename="surface.cpp" />
 		<Unit filename="surface.h" />

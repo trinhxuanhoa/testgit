@@ -35,7 +35,16 @@ class Dot
         int MPOSX=0;
         int skill=0;
         int mskill=0;
-int k1 = 4;
+        SDL_RendererFlip flipskill;
+        int  demlive1=0;
+        int resetdemlive=0;
+        int skilly= 0;
+        int demskill =0;
+        bool skilldai = false;
+        int vachamskill=false;
+int  demlive2=0;
+int k1 = 8;
+int k=0;
 SDL_RendererFlip flip=SDL_FLIP_NONE;	//The dimensions of the dot
 
 		//Maximum axis velocity of the dot
@@ -62,12 +71,14 @@ SDL_RendererFlip flip=SDL_FLIP_NONE;	//The dimensions of the dot
                  bool vacham10(int collx,int colly);
 
 bool vachamsan(int collx,int colly);
+void demsoluong(int live1,int live2);
 void tim();
 void chem();
+bool vachamdan(int &danx,int dany,int hd,int wd);
 		//Shows the dot on the screen relative to the camera
 		void rendermonster();
 		void render(int camX, int camY );
-     void renderMove(SDL_Event &e,int camX, int camY ,int k);
+     void renderMove(SDL_Event &e,int camX,int camY, int camy);
 		//Position accessors
 		int getPosX();
 		int getPosY();
@@ -78,7 +89,7 @@ void chem();
   int collx,colly;
   int xs=0;
 		//The velocity of the dot
-		int mVelX, mVelY;
+		int mVelX=0, mVelY=0;
 };
 
 

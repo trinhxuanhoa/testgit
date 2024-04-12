@@ -1,8 +1,5 @@
 
-/*This source code copyrighted by Lazy Foo' Productions 2004-2024
-and may not be redistributed without written permission.*/
 
-//Using SDL, SDL_image, standard IO, and strings
 #include <SDL.h>
 #include <SDL_image.h>
 #include <stdio.h>
@@ -13,7 +10,7 @@ and may not be redistributed without written permission.*/
 #include "main.h"
 #include <SDL_mixer.h>
 #include "Ai.h"
-//Screen dimension constants
+
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
 
@@ -21,22 +18,22 @@ extern const int SCREEN_HEIGHT;
 extern TTF_Font* gFont;
 extern LTexture topictexture;
 extern LTexture timeremaining;
-//Starts up SDL and creates window
+extern Dot dot;
+
 bool init();
 
-//Loads media
+
 bool loadMedia();
 
-//Frees media and shuts down SDL
+
 void close();
 
-//The window we'll be rendering to
 extern SDL_Window* window;
 
-//The window renderer
+
 extern SDL_Renderer* renderer;
 
-//Scene textures
+
 
 LTexture::LTexture()
 {
@@ -93,7 +90,7 @@ bool LTexture::loadFromFile( std::string path )
 	return mTexture != NULL;
 }
 
- //defined(SDL_TTF_MAJOR_VERSION)
+
 bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColor )
 {
 	//Get rid of preexisting texture
@@ -119,6 +116,7 @@ gFont=TTF_OpenFont( "lazy.ttf", 28 );
 
 		//Get rid of old surface
 		SDL_FreeSurface( textSurface );
+		TTF_CloseFont(gFont);
 	}
 	else
 	{
@@ -163,6 +161,8 @@ void LTexture::setAlpha( Uint8 alpha )
 
 void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip1 )
 {
+
+
 	//Set rendering space and render to screen
 	SDL_Rect renderQuad = { x, y, 3000, 450 };
 
@@ -176,7 +176,7 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 	//Render to screen
 	SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip1 );
 }
-void LTexture::renderMove( SDL_Event &e,int camx,int mPosX,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
+void LTexture::renderMove( SDL_Event &e,int camx,int camy,int mPosX,int mPosY,SDL_RendererFlip &flip,SDL_Rect* clip, double angle, SDL_Point* center)
 {
 
 
@@ -184,7 +184,7 @@ void LTexture::renderMove( SDL_Event &e,int camx,int mPosX,int mPosY,SDL_Rendere
        mPosX-=40;
         if(flip==SDL_FLIP_HORIZONTAL)
          mPosX-=10;
-        SDL_Rect renderQuad = { mPosX-camx, mPosY, mWidth/3, mHeight/3 };
+        SDL_Rect renderQuad = { mPosX-camx, mPosY-camy, mWidth/3, mHeight/3 };
     SDL_RenderCopyEx( renderer, mTexture, clip, &renderQuad, angle, center, flip );
 }
 
