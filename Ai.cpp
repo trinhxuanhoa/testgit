@@ -10,7 +10,7 @@
 #include <SDL_mixer.h>
 #include "motion.h"
 #include "Ai.h"
-
+#include "music.h"
 using namespace std;
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
@@ -439,10 +439,10 @@ if(wn&&sPosY<mPosY) mVelY=1;
 
     if(mVelY>0&&v==0) {
         if(wn) {
-         if(sv==0) v=18;
+         if(sv==0) v=24;
 else  v=sv;
         }
-v=18;
+v=24;
     if(mPosX==264||mPosX==1104||mPosX==1200||mPosX==1736||mPosX==2000||mPosX==2068||mPosX==2216||mPosX==2280||mPosX==2308||mPosX==2384) v = 24;
     }
 
@@ -788,6 +788,12 @@ void Witch::dan(int &hesotim) {
 
 SDL_Texture*dan1=loadTexture(renderer,"monster/dan.png");
 SDL_Rect danak[10];
+checkmusic=false;
+if(mdan[0]==0)
+checkmusic=true;
+
+
+//cout << checkmusic << " " <<mdan[0] << endl;
 for(int i =0; i < sodan; i++) {
 
 if(dau[i]==0) {

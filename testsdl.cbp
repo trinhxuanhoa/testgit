@@ -35,6 +35,7 @@
 		<Unit filename="Ai.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
+		<Unit filename="man.cpp" />
 		<Unit filename="motion.cpp" />
 		<Unit filename="motion.h" />
 		<Unit filename="music.cpp" />
@@ -45,6 +46,8 @@
 		<Unit filename="stlutils.cpp" />
 		<Unit filename="surface.cpp" />
 		<Unit filename="surface.h" />
+		<Unit filename="video.cpp" />
+		<Unit filename="video.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

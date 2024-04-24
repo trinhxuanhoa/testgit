@@ -189,10 +189,20 @@ void LTexture::renderMove( SDL_Event &e,int camx,int camy,int mPosX,int mPosY,SD
 }
 
 void LTexture::rendertext (int x,int y,int live) {
+
 SDL_Color color = {255,255,255,255};
 SDL_Rect a = {x,y,mWidth,mHeight};
 if(loadFromRenderedText(to_string(live),color))
     SDL_RenderCopy(renderer,mTexture,NULL,&a);
+
+}
+void LTexture::rendertexttutorial (int x,int y,string huongdan) {
+
+SDL_Color color = {255,255,255,255};
+SDL_Rect a = {x,y,mWidth,mHeight};
+if(loadFromRenderedText(huongdan,color))
+    SDL_RenderCopy(renderer,mTexture,NULL,&a);
+
 }
 int LTexture::getWidth()
 {

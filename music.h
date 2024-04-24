@@ -17,16 +17,15 @@ class music{
 
 public:
 
- Mix_Music *amthanhnen = NULL;
- Mix_Chunk *danh = NULL;
- Mix_Chunk *gHigh = NULL;
- Mix_Chunk *gMedium = NULL;
- Mix_Chunk *gLow = NULL;
+ Mix_Music *amthanhnen[10];
+ Mix_Chunk *danh[2];
+
  int danh1=0;
 
 bool loadMusic();
-void handleMusic ();
-void nhacnen();
+void handleMusic (int &volume);
+void nhacnen(int &volume1,int &chon,int &nhochon);
+void amthanhsung(int &volume);
 void closeMusic();
 };
 

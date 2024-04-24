@@ -50,7 +50,7 @@ void renderMove( SDL_Event &e,int camx,int camy,int mPosX,int mPosY,SDL_Renderer
 		void rendertext (int x,int y,int live);
 		int getWidth();
 		int getHeight();
-
+void rendertexttutorial (int x,int y,string huongdan);
 	private:
 		//The actual hardware texture
 		SDL_Texture* mTexture;

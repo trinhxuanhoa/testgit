@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1712917464 source:c:\testsdl\main.cpp
+1713938054 source:c:\testsdl\main.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -14,8 +14,9 @@
 	"Ai.h"
 	"music.h"
 	"start.h"
+	"video.h"
 
-1710001470 source:c:\testsdl\stlutils.cpp
+1713937771 source:c:\testsdl\stlutils.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -35,7 +36,7 @@
 	<bits/stdc++.h>
 	<SDL_mixer.h>
 
-1712500742 source:c:\testsdl\surface.cpp
+1713882249 source:c:\testsdl\surface.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -47,7 +48,7 @@
 	<SDL_mixer.h>
 	"Ai.h"
 
-1712458162 c:\testsdl\surface.h
+1713880647 c:\testsdl\surface.h
 	<iostream>
 	<SDL.h>
 	<bits/stdc++.h>
@@ -90,7 +91,7 @@
 	<SDL_mixer.h>
 	"motion.h"
 
-1712916387 c:\testsdl\ai.h
+1713888284 c:\testsdl\ai.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -103,7 +104,7 @@
 	"motion.h"
 	"start.h"
 
-1712916724 source:c:\testsdl\ai.cpp
+1713888284 source:c:\testsdl\ai.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -116,8 +117,9 @@
 	<SDL_mixer.h>
 	"motion.h"
 	"Ai.h"
+	"music.h"
 
-1711279680 source:c:\testsdl\music.cpp
+1713890266 source:c:\testsdl\music.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -130,7 +132,7 @@
 	<SDL_mixer.h>
 	"music.h"
 
-1711205092 c:\testsdl\music.h
+1713890018 c:\testsdl\music.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -142,7 +144,7 @@
 	<SDL_mixer.h>
 	"music.h"
 
-1712917464 c:\testsdl\start.h
+1713882063 c:\testsdl\start.h
 	<iostream>
 	<SDL.h>
 	<bits/stdc++.h>
@@ -152,7 +154,7 @@
 	<SDL_mixer.h>
 	"Ai.h"
 
-1712917800 source:c:\testsdl\start.cpp
+1713938396 source:c:\testsdl\start.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -167,4 +169,49 @@
 	"Ai.h"
 	"music.h"
 	"start.h"
+
+1713866189 source:c:\testsdl\man.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"motion.h"
+	"Ai.h"
+	"music.h"
+	"start.h"
+
+1713803640 c:\testsdl\video.h
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"motion.h"
+	"Ai.h"
+
+1713803736 source:c:\testsdl\video.cpp
+	<SDL.h>
+	<SDL_image.h>
+	<stdio.h>
+	<string>
+	"sdlutils.h"
+	<SDL_ttf.h>
+	<bits/stdc++.h>
+	"surface.h"
+	"main.h"
+	<SDL_mixer.h>
+	"motion.h"
+	"Ai.h"
+	"video.h"
 

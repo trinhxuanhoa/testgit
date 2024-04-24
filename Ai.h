@@ -93,6 +93,8 @@ SDL_Rect camera;
          bool dau[10]={0,0,0,0,0,0,0,0,0,0};
          int sodan=2;
          bool wn=false;
+         bool checkmusic=false;
+
   int lanY[10]={0,0,0,0,0,0,0,0,0,0};
  int collx,colly;
  bool vachamskill= false;
