@@ -21,8 +21,16 @@
 # 0. Cách tải game.
 ## Dành cho hệ điều hành windown (không bao gồm code)
 - Tải game (được nén thành .zip) tại link
-sau: https://github.com<br/>
+sau: https:https://github.com/trinhxuanhoa/testgit/releases/tag/dungeon2d<br/>
 khoảng 57MB.<br/>
+-tải mục thứ nhất.<br/>
+
+<div style="text-align: center;">
+
+![](demo/dl.png)
+
+</div>
+
 - Giải nén game vào một thư mục và bật dungeon2d.exe lên và chơi.<br/>
 
 # 1. Bắt đầu game
@@ -31,8 +39,6 @@ khoảng 57MB.<br/>
 <div style="text-align: center;">
 
 ![image](demo/loading....png)
-
-
 
 </div>
 
@@ -82,7 +88,7 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](demo/gamespace.png)
+![](demo/spacemode.png)
 
 </div>
 trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
@@ -169,6 +175,8 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 ![](demo/giaodien.png)
 
 </div>
+
+
 
 
 
