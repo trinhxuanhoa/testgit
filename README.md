@@ -32,14 +32,16 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](anh demo/loading....png)
+![image](demo/loading....png)
+
+
 
 </div>
 
 - Khi vào game, người chơi hãy hãy nhấn vào **Start Game** để bắt đầu.
 <div style="text-align: center;">
 
-![](anh demo/start.png)
+![](demo/start.png)
 
 </div>
 # 2. Chọn level
@@ -48,7 +50,7 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](anh demo/lv.png)
+![](demo/lv.png)
 
 </div>
 
@@ -56,7 +58,7 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](anh demo/lv2.png)
+![](demo/lv2.png)
 
 </div>
 
@@ -64,7 +66,7 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](anh demo/lv3.png)
+![](demo/lv3.png)
 
 </div>
 
@@ -72,7 +74,7 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](anh demo/man.png)
+![](demo/man.png)
 
 </div>
 
@@ -82,14 +84,14 @@ khoảng 57MB.<br/>
 
 <div style="text-align: center;">
 
-![](anh demo/gamespace.png)
+![](demo/gamespace.png)
 
 </div>
 trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/diem.png)
+![](demo/diem.png)
 
 </div>
 
@@ -99,7 +101,7 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/start.png)
+![](demo/start.png)
 
 </div>
 
@@ -107,7 +109,7 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/inspace.png)
+![](demo/inspace.png)
 
 </div>
 
@@ -127,7 +129,7 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/music.png)
+![](demo/music.png)
 
 </div>
 
@@ -141,15 +143,15 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/tutorial.png)
+![](demo/tutorial.png)
 
 </div>
 
-- ![](anh demo/tim.png) : Tính số là số lượng tim bạn đang có.
+- ![](demo/tim.png) : Tính số là số lượng tim bạn đang có.
 
-- ![](anh demo/back.png) : Tạm dừng game
+- ![](demo/back.png) : Tạm dừng game
 
-- ![](anh demo/back2.png) : quay trở lại giao diện **game start**
+- ![](demo/back2.png) : quay trở lại giao diện **game start**
 
 - Nếu bạn muốn tiếp tục nhấn **continue** 
 
@@ -157,7 +159,7 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/pause.png)
+![](demo/pause.png)
 
 </div>
 
@@ -165,9 +167,14 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 <div style="text-align: center;">
 
-![](anh demo/giaodien.png)
+![](demo/giaodien.png)
 
 </div>
+
+
+
+
+
 
 
 
