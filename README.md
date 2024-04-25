@@ -54,7 +54,7 @@ khoảng 57MB.<br/>
 
 </div>
 
-- Tuy nhiên khi mới bắt đầu, bạn chỉ mở được 1 level. Chiến thắng lần lượt từng level để mở khóa và chơi level tiếp theo:
+- Tuy nhiên khi mới bắt đầu, bạn chỉ mở được 1 level. Chiến thắng lần lượt từng level để mở khóa và chơi level tiếp theo.
 
 <div style="text-align: center;">
 
@@ -151,17 +151,18 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 
 - ![](demo/back.png) : Tạm dừng game
 
-- ![](demo/back2.png) : quay trở lại giao diện **game start**
-
 - Nếu bạn muốn tiếp tục nhấn **continue** 
 
 - Nếu bạn muốn thoát nhấn **exit**
+
 
 <div style="text-align: center;">
 
 ![](demo/pause.png)
 
 </div>
+
+- ![](demo/back2.png) : quay trở lại giao diện **game start**
 
 - Giao diện game
 
@@ -170,8 +171,6 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 ![](demo/giaodien.png)
 
 </div>
-
-
 
 
 
