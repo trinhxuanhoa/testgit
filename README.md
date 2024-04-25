@@ -14,8 +14,6 @@
 - [3. Chế độ SPACE MOD](#3-Chế-độ-SPACE-MOD)    
 - [4. Các thành phần trong game:](#4-các-thành-phần-trong-game)
 - [5. Cách chơi](#5-cách-chơi)
-    * [a. Các loại cây](#acác-loại-cây)
-    * [b. Các loại zombie](#bcác-loại-zombie)
 - [6. Chiến thắng và thất bại](#6-chiến-thắng-và-thất-bại)
 - [Về đồ họa của game:](#về-đồ-họa-của-game)
 - [Về source code game](#về-source-code-game)
