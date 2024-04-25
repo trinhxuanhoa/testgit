@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1713938054 source:c:\testsdl\main.cpp
+1714053921 source:c:\testsdl\main.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -80,7 +80,7 @@
 	<SDL_mixer.h>
 	"Ai.h"
 
-1712901967 source:c:\testsdl\motion.cpp
+1714050546 source:c:\testsdl\motion.cpp
 	<SDL_image.h>
 	<stdio.h>
 	<string>
@@ -91,7 +91,7 @@
 	<SDL_mixer.h>
 	"motion.h"
 
-1713888284 c:\testsdl\ai.h
+1713944618 c:\testsdl\ai.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -104,7 +104,7 @@
 	"motion.h"
 	"start.h"
 
-1713888284 source:c:\testsdl\ai.cpp
+1713944618 source:c:\testsdl\ai.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -119,7 +119,7 @@
 	"Ai.h"
 	"music.h"
 
-1713890266 source:c:\testsdl\music.cpp
+1713947871 source:c:\testsdl\music.cpp
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>

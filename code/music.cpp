@@ -40,7 +40,7 @@ bool music::loadMusic()
         success = false;
     }
 
-     amthanhnen[3] = Mix_LoadMUS( "music/tqm.mp3" );
+     amthanhnen[3] = Mix_LoadMUS( "music/FILE_20220619_184131_Em nguyện làm một người bình thường bên cạnh anh (remix) _Nhạc hot Tik Tok Trung Quốc __ TM ( 128kbps ).mp3" );
     if( amthanhnen[3] == NULL )
     {
         printf( "Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError() );

@@ -442,7 +442,7 @@ if(wn&&sPosY<mPosY) mVelY=1;
          if(sv==0) v=24;
 else  v=sv;
         }
-v=18;
+v=24;
     if(mPosX==264||mPosX==1104||mPosX==1200||mPosX==1736||mPosX==2000||mPosX==2068||mPosX==2216||mPosX==2280||mPosX==2308||mPosX==2384) v = 24;
     }
 

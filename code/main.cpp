@@ -98,7 +98,9 @@ dot.e = e;
 
 }
 
-if(start==0.0){
+if(start==0.0)
+
+{
 dot.resetdemlive=0;
 dot.demsoluong(ai[0].live,witch[0].live);
 SDL_RenderClear(renderer);
@@ -145,6 +147,7 @@ if (start==3.0) {
 if(start==3.1) {
 dot.move();
 dot.resetdemlive=1;
+SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 
@@ -194,7 +197,6 @@ if(ai[1].live<=1) {
 ai[1].live=100;
 mandaqua[0]=1;
 d1=0;
-dot.danh=0;
         start=4.0;
 }
 ai[1].move(dot.hesotim);
@@ -203,18 +205,19 @@ ai[1].move(dot.hesotim);
 if(d1)
 ai[1].rendermonster();
 d1=1;
+SDL_Delay(20);
 
 if(dot.hesotim>=119){
         dot.hesotim=0;dot.mPosX=0;dot.mPosY=330;
         ai[1].live=sg.nholive;ai[1].mPosX=900;
         start=2.0;
 }
-SDL_Delay(30);
+
 }
 if(start==3.2) {
 dot.move();
 dot.resetdemlive=1;
-
+SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 
@@ -268,8 +271,6 @@ if(witch[2].live<=2) {
 witch[2].live=100;
 mandaqua[1]=1;
 d2=0;
-
-dot.danh=0;
         start=4.0;
 }
 
@@ -278,20 +279,19 @@ witch[2].move(dot.hesotim);
 if(d2)
 witch[2].renderwitch(dot.hesotim);
 d2=1;
-
+SDL_Delay(20);
 
 if(dot.hesotim>=119){
         dot.hesotim=0;dot.mPosX=0;dot.mPosY=330;
        witch[2].live=sg.nholive;witch[2].mPosX=900;
         start=2.0;
 }
-SDL_Delay(30);
 }
 if(start==3.3) {
 witch[3].sodan=5;
 dot.move();
 dot.resetdemlive=1;
-
+SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 
@@ -344,8 +344,6 @@ if(witch[3].live<=2) {
 witch[3].live=100;
 mandaqua[2]=1;
 d3=0;
-
-dot.danh=0;
         start=4.0;
 }
 
@@ -354,20 +352,19 @@ witch[3].move(dot.hesotim);
 if(d3)
 witch[3].renderwitch(dot.hesotim);
 d3=1;
-
+SDL_Delay(20);
 
 if(dot.hesotim>=119){
         dot.hesotim=0;dot.mPosX=0;dot.mPosY=330;
        witch[3].live=sg.nholive;witch[3].mPosX=900;
         start=2.0;
 }
-SDL_Delay(30);
 }
 if (start==3.4) {
 
 dot.move();
 dot.resetdemlive=1;
-
+SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 
@@ -450,8 +447,6 @@ dot.hesotim=0;dot.mPosX=0;dot.mPosY=330;
         ai[4].live=sg.nholive;ai[4].mPosX=900;
 ai[4].live=100;
 mandaqua[3]=1;
-
-dot.danh=0;
         start=4.0;
 }
 //dot.demsoluong(ai[0].live,witch[0].live);
@@ -463,7 +458,7 @@ ds4=1;
 if(dw4)
 witch[4].renderwitch(dot.hesotim);
 dw4=1;
-
+SDL_Delay(20);
 
 if(dot.hesotim>=119){
 
@@ -478,13 +473,12 @@ for(int i = 0; i < 10; i++) {
 }
 
 }
-SDL_Delay(30);
 }
 if (start==3.5) {
 witch[5].sodan=5;
 dot.move();
 dot.resetdemlive=1;
-
+SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 
@@ -567,7 +561,6 @@ dot.hesotim=0;dot.mPosX=0;dot.mPosY=330;
         ai[5].live=sg.nholive;ai[5].mPosX=900;
 ai[4].live=100;
 
-dot.danh=0;
         start=4.0;
 }
 //dot.demsoluong(ai[0].live,witch[0].live);
@@ -579,7 +572,7 @@ ds5=1;
 if(dw5)
 witch[5].renderwitch(dot.hesotim);
 dw5=1;
-
+SDL_Delay(20);
 
 if(dot.hesotim>=119){
 
@@ -595,13 +588,13 @@ for(int i = 0; i < 10; i++) {
 
 }
 
-SDL_Delay(30);
+
 }
 if (start==1.0) {
 
 dot.move();
 dot.resetdemlive=1;
-
+SDL_Delay(10);
 camera.x = dot.getPosX()+saberx/6-SCREEN_WIDTH/2;//cout << dot.getPosY() << endl;
 camera.y = dot.getPosY()+sabery/6-SCREEN_HEIGHT/2;
 
@@ -680,7 +673,7 @@ ai[0].rendermonster();
 //ai[1].renderwitch();
 if(w1)
 witch[0].renderwitch(dot.hesotim);
-
+SDL_Delay(10);
 
 if(dot.hesotim>=119){
 
@@ -695,7 +688,6 @@ for(int i = 0; i < 10; i++) {
 }
 
 }
-SDL_Delay(20);
 }
 if(start==1.1) {
 

@@ -125,6 +125,7 @@ SDL_RenderCopyEx(renderer,chem[i/2],NULL,&a,0.0,NULL, flip);
 
 SDL_RenderCopyEx(renderer,ki,NULL,&b,0.0,NULL,flipskill);
 
+
 danh--;
 
 i++;
