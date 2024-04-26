@@ -14,6 +14,8 @@
 - [3. Chế độ SPACE MOD](#3-Chế-độ-SPACE-MOD)    
 - [4. Các thành phần trong game:](#4-các-thành-phần-trong-game)
 - [5. Cách chơi](#5-cách-chơi)
+    * [a. Nhân vật](#a-nhân-vật)
+    * [b. Các loại quái trong game](#b-các-loại-quái-trong-game)
 - [6. Chiến thắng và thất bại](#6-chiến-thắng-và-thất-bại)
 - [Về đồ họa của game:](#về-đồ-họa-của-game)
 - [Về source code game](#về-source-code-game)
@@ -48,6 +50,7 @@ khoảng 57MB.<br/>
 ![](demo/start.png)
 
 </div>
+
 # 2. Chọn level
 
 - có 5 level.  Chỉ cần click chuột để chơi level đó.
@@ -175,6 +178,73 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 ![](demo/giaodien.png)
 
 </div>
+
+# 5. Cách chơi 
+
+-Người chơi di chuyển qua lại trách bị quái đánh trúng, đồng thời nhấn space để tấn công quái.
+
+## a. Nhân vật
+
+ <img src="demo/newsaber.png" width=50>: Tên nhân vật là Saber, lượng máu là 120, mỗi lần tấn công sẽ chém ra một luồng khí đến kẻ địch khiến nó mất máu.
+ 
+ <img src="demo/sabere2.png" width=50>: Saber vận khí giúp nhảy cao hơn.
+
+## b. Các loại quái trong game
+
+- Có 2 loại quái trong game
+
+|                                                                             | Tên quái	     | Chức năng                                                                                                                    |
+|-----------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------------------------------------------------------|
+| <img src="demo/witch.png" width=50>  | Witch	  | Mỗi lần có thể bắn từ 1 đến 10 vên đạn, lượng máu mặc định là 100.                                                                                              |
+| <img src="demo/skeleton.png" width=50>  | Skeleton	  | Tiến lại gần để chém bạn, lượng máu mặc định là 100.                                                                                              |
+
+# 6. Chiến thắng và thất bại
+
+- Bạn sẽ chiến thắng nếu tiêu diệt hết tất cả quái trong màn đó. màn hình sẽ xuất hiện một giao diện
+        * Nếu muốn chơi màn tiếp theo nhấn **continue**
+         
+        * Nếu muốn thoát nhấn **exit**
+
+<div style="text-align: center;">
+
+![image](demo/pause.png)
+
+</div>
+
+
+- Bạn sẽ thất bại nếu bạn mất hết máu
+
+<div style="text-align: center;">
+
+![image](demo/gameover.png)
+
+</div>
+
+### Về đồ họa của game:
+
+- [[dùng xilart để xóa phong, tạo hiệu ứng]](https://www.pixilart.com/draw#)
+
+### Về source code game:
+
+- main.cpp
+    * xử lý các dữ liệu đầu vào đầu ra của các file .cpp khác và màn chơi.
+- stlutils.cpp và surface.cpp:
+    * khởi tạo window và renderer.
+    * chứa hầu hết các câu lệnh của SDL2, SDL2_image, SDL2_ttf, sử dụng để vẽ load ảnh, chữ và vẽ lên renderer, window.
+- motion.cpp: 
+    * sử lý các sự kiện, va chạm, di chuyển của nhân vật trong game.
+- Ai.cpp:
+    * sử lý các sự kiện, va chạm, di chuyển của quái trong game.
+- music.cpp: 
+    * xử lý phần âm thanh của game - SDL2_mixer.
+- video.cpp:
+-   * xử lý video.
+
+
+
+
+
+
 
 
 
