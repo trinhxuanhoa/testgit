@@ -3,7 +3,7 @@
 - Thử nghiệm game:
     * drive: https://drive.google.com/file/d/1vcCBIHNx8RkXRN8LEdq1af8w9Wbzo8_K/view?usp=drive_link
     * youtube: https://youtu.be/MvOKzJYwZco?si=78YS1wGxX8nzJ4YU
-- Phá đảo game: 
+- Phá đảo game: https://youtu.be/HJQWhD3IA0I?si=TBDQZ5wipjVKfFh_
 
 # Giới thiệu game
 -Trong Dungeon 2D, người chơi sẽ nhập vai vào một nhân vật can đảm, sở hữu một thanh kiếm sắc bén, sẵn sàng đối đầu với các thử thách nguy hiểm.\
