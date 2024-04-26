@@ -332,9 +332,10 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 # 6. Chiến thắng và thất bại
 
 - Bạn sẽ chiến thắng nếu tiêu diệt hết tất cả quái trong màn đó. màn hình sẽ xuất hiện một giao diện
-        * Nếu muốn chơi màn tiếp theo nhấn **continue**
+
+        - Nếu muốn chơi màn tiếp theo nhấn CONTINUE
          
-        * Nếu muốn thoát nhấn **exit**
+        - Nếu muốn thoát nhấn EXIT
 
 <div style="text-align: center;">
 
