@@ -507,9 +507,10 @@ trên màn hình sẽ xuất hiện số quái bạn tiêu diệt
 -start.cpp: 
     * xử lý giao diện game start, space game.
 - video.cpp:
-   * xử lý video.
-
-
+    * xử lý video.
+- Nguồn tham khảo
+    * [lazyfoo](https://lazyfoo.net/tutorials/SDL/)
+    * [couse.uet](https://courses.uet.vnu.edu.vn/loginform/index.php)
 
 
 
