@@ -1,6 +1,6 @@
 # Dungeon 2D
 
-- Thử nghiệm game: 
+- Thử nghiệm game: https://drive.google.com/file/d/1vcCBIHNx8RkXRN8LEdq1af8w9Wbzo8_K/view?usp=drive_link
 - Phá đảo game: 
 
 # Giới thiệu game
